@@ -1,32 +1,58 @@
 <template>
-  <div id="app">
-    <div id="nav">
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>
-    </div>
-    <router-view/>
-  </div>
+  <v-app>
+    <v-app-bar
+      app
+      color="primary"
+      dark
+    >
+      <div class="d-flex align-center">
+        <v-img
+          alt="Vuetify Logo"
+          class="shrink mr-2"
+          contain
+          src=https://static.retail.autofact.cl/img/logo-autofact-blanco.png
+          transition="scale-transition"
+          width="100"
+        />
+        <span>Prueba AUTOFACT</span>
+      
+      </div>
+      <v-spacer></v-spacer>  
+
+
+    </v-app-bar>
+
+    <v-content>
+
+      <HelloWorld/>
+      <Registro/>
+      <Preguntas/>
+
+    </v-content>
+  </v-app>
+
+
+
 </template>
 
-<style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-}
+<script>
+import HelloWorld from './components/HelloWorld';
+import Registro from './components/login'
+import Preguntas from './components/Preguntas'
 
-#nav {
-  padding: 30px;
-}
+export default {
+  name: 'App',
 
-#nav a {
-  font-weight: bold;
-  color: #2c3e50;
-}
+  components: {
+    
+    Registro,
+    HelloWorld,
+    Preguntas,
+  },
 
-#nav a.router-link-exact-active {
-  color: #42b983;
-}
-</style>
+  data: () => ({
+    //
+  
+  }),
+};
+</script>
